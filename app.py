@@ -8,7 +8,12 @@ def index():
 @app.route('/hogar')
 def hogar():
     return render_template("hogar.html")
-
+@app.route('/vivienda')
+def vivienda():
+    return render_template("vivienda.html")
+@app.route('/contacto')
+def contacto():
+    return render_template("contacto.html")
 @app.route('/index', methods=['POST'])
 def recibir_ubicacion():
     data = request.get_json()
@@ -16,4 +21,4 @@ def recibir_ubicacion():
     return {'status': 'ok'}
 
 if __name__ == '__main__':
-    app.run
+    app.run(debug=True)
